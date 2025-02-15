@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// ada
 Route::middleware('guest')->group(function(){
     Route::get('change', [LanguageController::class, 'change'])->name('lang.change');
 });
@@ -24,8 +26,19 @@ Route::get('/admin/studio', function () {
     return view('/admin/studio');
 });
 
+// video
 Route::get('/admin/studio/video', function () {
     return view('/admin/video');
+});
+
+// article
+Route::get('/admin/studio/article', function () {
+    return view('/admin/article');
+});
+
+// Upload Article
+Route::get('/admin/studio/article/upload', function () {
+    return view('/admin/article_upload');
 });
 
 // Untuk Register

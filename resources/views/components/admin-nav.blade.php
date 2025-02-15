@@ -7,7 +7,12 @@
 
 
     {{-- Tombol Video  --}}
-    <a href="/admin/studio/video" class="flex mt-10 justify-center w-full p-2 hover:bg-gray-300">
+    <a href="/admin/studio/video" class="flex mt-5 justify-center w-full p-2 hover:bg-gray-300">
         <i class="bi bi-file-earmark-play text-white text-[30px]"></i>
+    </a>
+
+    {{-- Tombol Article --}}
+    <a href="/admin/studio/article" class="flex mt-5 justify-center w-full p-2 hover:bg-gray-300">
+        <i class="bi bi-file-earmark-richtext-fill text-[30px] text-white"></i>
     </a>
 </aside>
