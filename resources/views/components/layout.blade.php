@@ -6,6 +6,7 @@
     <title>Teknik Informatika</title>
     <link rel="icon" type="image/x-icon" href="/images/tif.png">
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +17,7 @@
             display: none;
         }
     </style>
+    <x-tinymce.tinymceConfig></x-tinymce.tinymceConfig>
 </head>
 <body>
     {{ $slot }}

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\tinymce;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class adminNav extends Component
+class tinymceEditor extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class adminNav extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.adminnav');
+        return view('components.tinymce.tinymce-editor');
     }
 }

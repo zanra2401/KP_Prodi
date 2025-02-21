@@ -1,5 +1,4 @@
 <body  x-data="{ open: true }">
-
     <!-- Sidebar -->
     <div class="relative z-20">
         <div class="fixed top-0 left-0 h-screen bg-gray-800 text-white transition-all duration-300 shadow-lg"
@@ -16,15 +15,15 @@
                     <i class="bi bi-house text-[25px]"></i>
                     <span x-show="open" class="ml-3">All Content</span>
                 </a>
-                <a href="" class="flex items-center p-4 hover:bg-gray-700 transition-all">
+                <a href="/admin/studio/fotos" class="flex items-center p-4 hover:bg-gray-700 transition-all">
                     <i class="bi bi-image text-[25px]"></i>
                     <span x-show="open" class="ml-3">Picture</span>
                 </a>
-                <a href="/admin/studio/video" class="flex items-center p-4 hover:bg-gray-700 transition-all">
+                <a href="/admin/studio/videos" class="flex items-center p-4 hover:bg-gray-700 transition-all">
                     <i class="bi bi-camera-video text-[25px]"></i>
                     <span x-show="open" class="ml-3">Video</span>
                 </a>
-                <a href="" class="flex items-center p-4 hover:bg-gray-700 transition-all">
+                <a href="/admin/studio/article" class="flex items-center p-4 hover:bg-gray-700 transition-all">
                     <i class="bi bi-file-earmark-text text-[25px]"></i>
                     <span x-show="open" class="ml-3">Article</span>
                 </a>
@@ -51,62 +50,5 @@
          </div>
         {{ $slot }}
     </div>
-    <div x-data="{ open: false, showFolderModal: false, showFileModal: false }" class="fixed bottom-5 right-5 flex flex-col items-center gap-2">
-        <!-- Tombol Tambahan (Muncul di atas) -->
-        <div class="flex flex-col items-center gap-2 transition-all" 
-            :class="open ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5 pointer-events-none'">
-            
-            <!-- Tombol Tambah Folder -->
-            <button @click="showFolderModal = true" class="h-[50px] w-[50px] text-black hover:bg-black border border-black hover:text-white rounded-full shadow-md transition-all active:scale-110">
-                <i class="bi bi-folder-plus"></i>
-            </button>
-    
-            <!-- Tombol Tambah File -->
-            <button @click="showFileModal = true" class="h-[50px] w-[50px] text-black hover:bg-black border border-black hover:text-white rounded-full shadow-md transition-all active:scale-110">
-                <i class="bi bi-file-plus"></i>
-            </button>
-        </div>
-    
-        <!-- Tombol Utama -->
-        <button @click="open = !open" 
-            class="h-[50px] w-[50px] text-2xl p-2 border-2 rounded-full bg-black text-white border-black hover:bg-black hover:text-white transition-all active:scale-90"
-            :class="open ? 'rotate-45' : ''">
-            <i class="bi bi-plus-lg"></i>
-        </button>
-    
-        <!-- Modal Tambah Folder -->
-        <div x-show="showFolderModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div class="bg-white p-6 rounded-lg shadow-lg md:w-96 w-50">
-                <form action="" method="POST">
-                    @csrf
-                    <h2 class="text-lg font-semibold">Tambah Folder</h2>
-                    <input type="text" name="name" class="border p-2 w-full mt-2" placeholder="Nama Folder" required>
-                    
-                    <div class="flex justify-end gap-2 mt-4">
-                        <button type="button" @click="showFolderModal = false" class="px-4 py-2 bg-gray-300 rounded">Batal</button>
-                        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Tambah</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        {{--  --}}
-
-        
-        <!-- Modal Tambah File -->
-        <div x-show="showFileModal" class="fixed inset-0 flex z-40 items-center justify-center bg-black bg-opacity-50">
-            <div class="bg-white p-6 rounded-lg shadow-lg md:w-96 w-50"> 
-                <form action="" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <h2 class="text-lg font-semibold">Tambah File</h2>
-                    <input type="file" name="file" class="border p-2 w-full mt-2" required>
-                    <div class="flex justify-end gap-2 mt-4">
-                        <button type="button" @click="showFileModal = false" class="px-4 py-2 bg-gray-300 rounded">Batal</button>
-                        <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded">Upload</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>    
-    
 </body> 
 

@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\FotoController;
+use App\Http\Controllers\VideoController;
 use App\Http\Middleware\Localization;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Route;
 
 // Untuk Home
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,10 +27,7 @@ Route::get('/admin/studio', function () {
     return view('/admin/studio');
 });
 
-// video
-Route::get('/admin/studio/video', function () {
-    return view('/admin/video');
-});
+
 
 // article
 Route::get('/admin/studio/article', function () {
@@ -51,3 +49,10 @@ Route::get('/admin/login', function () {
     return view('/admin/login');
 });
  
+
+// Resource
+Route::resource('admin/studio/fotos', FotoController::class);
+Route::resource('admin/studio/videos', VideoController::class);
+Route::get('admin/studio/article', function () {
+    return view('/admin/article/index');
+});
